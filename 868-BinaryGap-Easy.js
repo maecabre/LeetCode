@@ -58,19 +58,26 @@
  * @return {number}
  */
 var binaryGap = function(n) {
-	binaryNum = n.toString(2);
+
+	// Convert n to binary
+	var binaryNum = n.toString(2);
 	var startVal = -1;
 	var endVal = -1;
 	var gap = 0;
+
 	for(var i = 0; i < binaryNum.length; i++){
+		// Start calculating gap if binary number starts with 1
 		if(binaryNum[i] == 1 && startVal == -1){
 			startVal = i;
 		}
+		// End calculating gap once second 1 is found, save gap value
+		// Only largest gap is saved/overwritten
 		else if(binaryNum[i] == 1 && endVal == -1){
 			endVal = i;
 			if((endVal - startVal) > gap){
 				gap = endVal - startVal;
 			}
+			// Reset
 			startVal = endVal;
 			endVal = -1;
 		}

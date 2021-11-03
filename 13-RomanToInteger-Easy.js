@@ -53,13 +53,14 @@ var romanToInt = function(s) {
 	var lastNum = 0;
 	var currentNum = 0;
 
-	// read string right to left
+	// Read string right to left
 	for(var i = s.length - 1; i > -1; i--){
 
 		if(i < s.length - 1){
 			lastNum = currentNum;
 		}
 
+		// What letter am I reading, what's its value
 		switch(s[i]){
 			case "I":
 				currentNum = 1;
@@ -87,6 +88,8 @@ var romanToInt = function(s) {
 				break;
 		}
 
+		// Add to final value if letter value increases
+		// Decrement to final value if letter value decreases
 		if(currentNum >= lastNum){
 			integer += currentNum;
 		} else if(currentNum < lastNum){
@@ -95,6 +98,5 @@ var romanToInt = function(s) {
 
 	}
 
-	console.log(integer);
 	return integer;
 };

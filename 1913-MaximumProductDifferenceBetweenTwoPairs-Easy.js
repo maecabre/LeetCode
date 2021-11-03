@@ -43,6 +43,12 @@ Return the maximum such product difference.
  * @return {number}
  */
 var maxProductDifference = function(nums) {
+
+	// Sort array
+    // Find product of smallest values
+    // Find prodcut of biggest values
+    // Return product
+	
 	var numsSorted = nums.sort(function(a, b){return a-b});
 	productSmall = numsSorted[0] * numsSorted[1];
 	productBig = numsSorted[numsSorted.length - 1] * numsSorted[numsSorted.length - 2];
