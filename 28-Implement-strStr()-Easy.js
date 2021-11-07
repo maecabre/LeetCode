@@ -39,8 +39,8 @@
  * @return {number}
  */
 var strStr = function(haystack, needle) {
-    
-    // Return 0 if no needle exists
+		
+		// Return 0 if no needle exists
 	if(needle == ''){
 		return 0;
 	}
@@ -48,24 +48,24 @@ var strStr = function(haystack, needle) {
 	var needleIndex = 0;
 	var needleCopy = '';
 
-    // Search for needle substring in haystack
-    for(var i = 0; i < haystack.length; i++){
-    	// if needle is empty, assemble needleCopy
-    	// else if needle not empty, exhange
-    	if(needleCopy.length != needle.length){
-    		needleCopy += haystack[i];
-    	} else if(needleCopy.length == needle.length){
-    		needleCopy += haystack[i];
-    		needleCopy = needleCopy.substring(1,needleCopy.length);
-    	}
+	// Search for needle substring in haystack
+	for(var i = 0; i < haystack.length; i++){
+		// if needle is empty, assemble needleCopy
+		// else if needle not empty, exhange
+		if(needleCopy.length != needle.length){
+			needleCopy += haystack[i];
+		} else if(needleCopy.length == needle.length){
+			needleCopy += haystack[i];
+			needleCopy = needleCopy.substring(1,needleCopy.length);
+		}
 
-        // Was needle found?
-    	if(needleCopy == needle){
-    		return i - needleCopy.length + 1;
-    	} 
-    }
-    
-    // Needle was not found
-    return -1;
+			// Was needle found?
+		if(needleCopy == needle){
+			return i - needleCopy.length + 1;
+		} 
+	}
+	
+	// Needle was not found
+	return -1;
 };
 
