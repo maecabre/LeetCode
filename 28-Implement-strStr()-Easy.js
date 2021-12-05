@@ -41,7 +41,7 @@
 var strStr = function(haystack, needle) {
 		
 		// Return 0 if no needle exists
-	if(needle == ''){
+	if(needle === ''){
 		return 0;
 	}
 
