@@ -45,41 +45,34 @@ var isPalindrome = function(x) {
 	var firstHalfElem;
 	var secHalfElem;
 
-    // if length is even
-    if((x.toString().length % 2) == 0){
-        var medianCeiling = x.toString().length/2;
-        //console.log(x.toString()[medianCeiling]);
+	// if length is even
+	if((x.toString().length % 2) == 0){
+		var medianCeiling = x.toString().length/2;
 
-        for(var i = 0; i < medianCeiling; i++){
-        	console.log(x.toString()[i]);
-        	console.log(x.toString()[x.toString().length - 1 - i]);
+		for(var i = 0; i < medianCeiling; i++){
 
-        	firstHalfElem = x.toString()[i];
-        	secHalfElem = x.toString()[x.toString().length - 1 - i];
-            if(firstHalfElem != secHalfElem){
-        		palindromeStatus = false;
-        	}
-        }
-    }
-    
+			firstHalfElem = x.toString()[i];
+			secHalfElem = x.toString()[x.toString().length - 1 - i];
+			if(firstHalfElem != secHalfElem){
+				palindromeStatus = false;
+			}
+		}
+	}
 
-    // if length is odd
-    if((x.toString().length % 2) == 1){
-    	var median = Math.floor(x.toString().length/2);
-        //console.log(x.toString()[median]);
+	// if length is odd
+	if((x.toString().length % 2) == 1){
+		var median = Math.floor(x.toString().length/2);
 
-        for(var i = 0; i < median; i++){
-        	//console.log(x.toString()[i]);
-        	//console.log(x.toString()[x.toString().length - 1 - i]);
+		for(var i = 0; i < median; i++){
 
-            firstHalfElem = x.toString()[i];
-            secHalfElem = x.toString()[x.toString().length - 1 - i];
-             if(firstHalfElem != secHalfElem){
-        		palindromeStatus = false;
-        	}
-        }        
-    }
+			firstHalfElem = x.toString()[i];
+			secHalfElem = x.toString()[x.toString().length - 1 - i];
+			if(firstHalfElem != secHalfElem){
+				palindromeStatus = false;
+			}
+		}
+	}
 
-    return palindromeStatus;
+	return palindromeStatus;
 };
 
