@@ -24,6 +24,14 @@ at least twice in the array, and return false if every element is distinct.
 		Input: nums = [1,1,1,3,3,4,3,2,4,2]
 		Output: true
 
+// Initial Thoughts/Notes *******************************************
+
+	• increment through array
+	• for each value, check if it's already in the set (unique values only)
+		• if its already in the set, duplicate found, return true
+		• else its not in the set, add to set
+	• return false otherwise
+
 */
 
 /**
@@ -41,7 +49,6 @@ var containsDuplicate = function(nums) {
 		if(mySet.has(nums[i])){
 			duplicate = true;
 		} else{
-
 			mySet.add(nums[i]);
 			i++;
 		}
