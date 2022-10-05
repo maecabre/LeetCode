@@ -47,7 +47,7 @@ Given a string s, return true if it is a palindrome, or false otherwise.
  * @return {boolean}
  */
 var isPalindrome = function(s) {
-    // Remove non-alphanumeric characters, Set to LowerCase
+	// Remove non-alphanumeric characters, Set to LowerCase
 	// ^ = NOT, a-z = letters, 0-9 = numbers, g = replace all occurences found, i = ignore cases
 	let sModified = s.replace(/[^a-z0-9]/gi, '').toLowerCase();
 	let head = 0;

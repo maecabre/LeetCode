@@ -29,6 +29,17 @@ If you cannot achieve any profit, return 0.
 		Output: 0
 		Explanation: In this case, no transactions are done and the max profit = 0.
 
+// Initial Thoughts/Notes *******************************************
+
+	• two pointers: low, high
+	• low = array[0], high = array[0], profit = high - low
+	• increment through array
+		• if high < low
+			• low = high
+		• if high - low > profit
+			• profit = high - low
+	• return profit
+
 */
 
 /**
@@ -36,35 +47,19 @@ If you cannot achieve any profit, return 0.
  * @return {number}
  */
 var maxProfit = function(prices) {
+		let low = prices[0];
+		let high = prices[0];
+		let profit = high - low;
 
-	let lowIndex = prices.length - 2;
-	let highIndex = prices.length - 1;
-	let low = prices[lowIndex];
-	let high = prices[highIndex];
-	let maximum = 0;
-
-	for(let i = prices.length - 2; i >= 0; i--){
-
-		if(prices[i] < low){
-			lowIndex = i;
-			low = prices[lowIndex];
+		for(let i = 1; i < prices.length; i++){
+			high = prices[i];
+			if(high < low){
+				low = high;
+			}
+			if(high - low > profit){
+				profit = high - low;
+			}
 		}
 
-		if(prices[i] > high && i != 0){
-			highIndex = i;
-			high = prices[highIndex];
-			lowIndex = i - 1;
-			low = prices[lowIndex];
-		}
-		
-		if(high - low > maximum){
-			maximum = high - low;
-		}
-	}
-
-	if(maximum > 0){
-		return maximum;
-	} else{
-		return 0;
-	}
+		return profit;
 };
